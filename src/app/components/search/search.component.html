@@ -1,0 +1,17 @@
+<div class="row" m-5>
+    <div class="col m-3">
+
+        <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control">
+
+    </div>
+</div>
+
+<div *ngIf="error" class="alert alert-danger animated fadeIn">
+    <h3>Disculpe, estoy aprendiendo y tuvimos un pequeño error</h3>
+    <p>{{mensajeerror}}</p>
+</div>
+<app-loading class="m-5" *ngIf="loading">
+</app-loading>
+
+
+<app-tarjetas *ngIf="!loading" [items]="busquedaArtista"></app-tarjetas>
